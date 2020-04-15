@@ -32,6 +32,21 @@ public class TraineeDaoImplementation implements TraineeDao{
 	}
 	
 	@Override
+	public Trainee findById(int id) {
+		 Trainee trainee = em.find(Trainee.class,id);
+		 return trainee;
+		
+	}
+	
+	@Override
+	public Trainee update(Trainee trainee,int traineeId) {
+		Trainee update_trainee=em.find(Trainee.class, traineeId);
+		update_trainee.setTraineeName(trainee.getTraineeName());
+		update_trainee.setTraineeDomain(trainee.getTraineeDomain());
+		return update_trainee;
+	}
+	
+	@Override
 	public Boolean delete(int id) {
 		// TODO Auto-generated method stub
 		Trainee trainee = em.find(Trainee.class, id);
@@ -42,6 +57,8 @@ public class TraineeDaoImplementation implements TraineeDao{
 			}
 		return false;
 	}
+	
+	
 	
 
 

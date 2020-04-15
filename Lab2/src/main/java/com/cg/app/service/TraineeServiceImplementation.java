@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cg.app.dao.TraineeDao;
 import com.cg.app.entity.Trainee;
 
+
 @Service
 public class TraineeServiceImplementation implements TraineeService{
 	
@@ -26,6 +27,18 @@ public class TraineeServiceImplementation implements TraineeService{
 	public List<Trainee> retrieve() {
 		
 		return dao.retrieve();
+	}
+	
+	@Override
+	public Trainee findById(int id) {
+		  
+		return dao.findById(id);
+	}
+	
+	@Override
+	public Trainee update(Trainee trainee,int traineeId) {
+		return dao.update(trainee,traineeId);
+		
 	}
 	
 	@Override

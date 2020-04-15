@@ -11,6 +11,10 @@ public interface TraineeService {
 	
 	public List<Trainee> retrieve();
 	
+	public Trainee findById(int id);
+	
+	public Trainee update(Trainee trainee,int traineeId);
+	
 	public Boolean delete(int id);
 
 }

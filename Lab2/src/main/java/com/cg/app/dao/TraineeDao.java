@@ -11,6 +11,10 @@ public interface TraineeDao {
 	
 	public List<Trainee> retrieve();
 	
+	public Trainee update(Trainee trainee,int traineeId);
+	
 	public Boolean delete(int id);
+	
+	public Trainee findById(int id);
 
 }
